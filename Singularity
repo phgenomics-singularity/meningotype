@@ -27,14 +27,8 @@ export PYTHONUSERBASE=False
   apt-get --yes install software-properties-common
   
   # add python3 support
-  add-apt-repository --yes ppa:jonathonf/python-2.7
-  apt-get --yes update
-  apt-get --yes install python2.7
+  conda install python==2.7.14
 
-
-  # getting pip and setuptools
-  curl https://bootstrap.pypa.io/get-pip.py | sudo python2.7
-  
   echo "Installing isPCR"
   
   export MACHTYPE='unix'
@@ -50,7 +44,7 @@ export PYTHONUSERBASE=False
   mkdir -p bin/${MACHTYPE}
   mkdir -p lib/${MACHTYPE}  
   make
-  sudo mv bin/${MACHTYPE}/*Pcr /usr/local/bin
+  mv bin/${MACHTYPE}/*Pcr /usr/local/bin
   cd ..
   rm -r isPcrSrc ${isPCR_ZIP}
   export HOME=${OLDHOME}
