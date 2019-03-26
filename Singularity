@@ -53,7 +53,7 @@ export PYTHONUSERBASE=False
   echo "Installing MENINGOTYPE"
 
   MENINGOTYPE_GT="git+https://github.com/MDU-PHL/meningotype.git@v${MENINGOTYPE_VERSION}"
-  pip2.7 install ${MENINGOTYPE_GT}
+  pip install ${MENINGOTYPE_GT}
   
   echo "UPDATING MENINGOTYPE DB"
   meningotype --updatedb
